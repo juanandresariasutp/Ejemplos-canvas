@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>ball html5</title></head>
+<body>
+    <canvas id="c" width="500" height="600"></canvas>
+   <script type="text/javascript">
+    var canvas, ctx;
+    function drawBall(x,y,r,color){
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI*2, true);
+      ctx.closePath();
+      ctx.fill();
+ }
+
+ function clear(){
+  canvas.width =  canvas.width;
+}
+
+function init(){
+  canvas = document.getElementById("c");
+  ctx = canvas.getContext("2d");
+  setInterval(loop, 1000/30);
+}
+function loop(){
+  clear();
+
+  drawBall(100,50,30,"#ADADAD");
+  drawBall(250,50,30,"#ADADAD");
+  drawBall(400,50,30,"#ADADAD");
+
+  drawBall(100,120,30,"#ADADAD");
+  drawBall(250,120,30,"#ADADAD");
+  drawBall(400,120,30,"#555");
+
+  drawBall(100,190,30,"#ADADAD");
+  drawBall(250,190,30,"#555");
+  drawBall(400,190,30,"#ADADAD");
+
+  drawBall(100,260,30,"#ADADAD");
+  drawBall(250,260,30,"#555");
+  drawBall(400,260,30,"#555");
+
+  drawBall(100,330,30,"#555");
+  drawBall(250,330,30,"#ADADAD");
+  drawBall(400,330,30,"#ADADAD");
+
+  drawBall(100,400,30,"#555");
+  drawBall(250,400,30,"#ADADAD");
+  drawBall(400,400,30,"#555");
+
+  drawBall(100,470,30,"#555");
+  drawBall(250,470,30,"#555");
+  drawBall(400,470,30,"#ADADAD");
+
+  drawBall(100,540,30,"#555");
+  drawBall(250,540,30,"#555");
+  drawBall(400,540,30,"#555");
+}
+
+window.onload = init;
+    </script>
+  </body>
+</html>
