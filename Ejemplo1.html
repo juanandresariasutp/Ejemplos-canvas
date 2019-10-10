@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ball html5</title></head>
+<body>
+    <canvas id="c" width="500" height="600"></canvas>
+   <script type="text/javascript">
+    var canvas, ctx;
+    function drawBall(x,y,r,color){
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI*2, true);
+      ctx.closePath();
+      ctx.fill();
+ }
+
+ function clear(){
+  canvas.width =  canvas.width;
+}
+
+function init(){
+  canvas = document.getElementById("c");
+  ctx = canvas.getContext("2d");
+  setInterval(loop, 1000/30);
+}
+function loop(){
+  clear();
+  var inicio = 30;
+  var radio = 25;
+  var delta = 65;
+  var color = "#bb00cc";
+  var c, f;
+  for (c = 0; c <= 2; c = c + 1)
+  {
+    for(f = 0; f <= 7; f = f + 1)
+    {
+      if ((f == 1 && c == 2)||
+         (f == 2 && c == 1)||
+         (f == 3 && c == 1)||
+         (f == 3 && c == 2)|| 
+         (f == 4 && c == 0)||
+         (f == 5 && c == 0)||
+         (f == 5 && c == 2)||
+         (f == 6 && c == 0)||
+         (f == 6 && c == 1)||
+         (f == 7 && c == 0)||
+         (f == 7 && c == 1)||
+         (f == 7 && c == 2)
+         ) 
+      {
+        color = "#AA0000";
+      }else{
+        color = "gray";
+      }
+      drawBall(inicio + c*delta, inicio + f*delta, radio, color);
+    }
+  }
+}
+
+window.onload = init;
+    </script>
+  </body>
+</html>
